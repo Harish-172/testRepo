@@ -42,5 +42,9 @@ Route::group(['middleware' => 'auth'], function()
 {    
     Route::get('admin/dashboard', [adminController::class, 'adminDashboard'])->name('admin.dashboard');
     Route::get('/admin/logout', [adminController::class, 'adminLogout'])->name('admin.logout');
-    Route::get('/add-category', [CategoryController::class, 'create'])->name('add.category');
+    Route::get('/add/category', [CategoryController::class, 'create'])->name('create.category');
+    Route::post('/add/category', [CategoryController::class, 'store'])->name('add.category');
+    Route::get('/categories', [CategoryController::class, 'show'])->name('show.categories');
+    Route::get('/edit/categories/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::get('/update/categories/{id}', [CategoryController::class, 'update'])->name('category.update');
 });
