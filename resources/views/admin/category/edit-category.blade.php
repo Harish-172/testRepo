@@ -19,7 +19,7 @@
             </div>
             <div class="x_content">
               <br />
-              <form method="post" action="{{route('category.update')}}" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+              <form method="post" action="{{route('category.update', $category->id)}}" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                 @csrf
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="category-name">Category Name <span class="required">*</span>
@@ -46,10 +46,9 @@
                 <div class="ln_solid"></div>
                 <div class="form-group">
                   <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                    <input type="submit" class="btn btn-success" value="Submit">
+                    <input type="submit" class="btn btn-success" value="Update">
                   </div>
                 </div>
-
               </form>
             </div>
           </div>

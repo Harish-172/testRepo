@@ -32,8 +32,6 @@
 
             <div class="x_content">
 
-              <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
-
               <div class="table-responsive">
                 <table class="table table-striped jambo_table bulk_action">
                   <thead>
@@ -52,7 +50,6 @@
                       </th>
                     </tr>
                   </thead>
-
                   <tbody>                
                         @forelse($categories as $category)
                             <tr class="even pointer">
@@ -63,7 +60,7 @@
                                 <td>{{$category['name']}}</td>
                                 <td>
                                     @if($category['category_id'])
-                                        {{$categories[$loop->index]->parent->name}}
+                                        {{-- {{$categories[$loop->index]->parent->name}} --}}
                                     @else
                                         No Parent Category
                                     @endif
@@ -71,7 +68,7 @@
                                 <td>{{$category['created_at']}}</td>    
                                 <td>
                                     <a href="{{route('category.edit', $category['id'])}}"><i class="fa fa-edit"></i></a>    
-                                    <a href=""><i class="fa fa-trash"></i></a>    
+                                    <a href="javascript:void(0)" class="delete-category" data-id="{{$category['id']}}"><i class="fa fa-trash"></i></a>    
                                 </td>    
                             </tr>   
                         @empty

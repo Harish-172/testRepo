@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
     <title>Gentelella Alela! | </title>
@@ -28,6 +29,8 @@
 
     <!-- Custom Theme Style -->
     <link href="{{asset('admin_theme/build/css/custom.min.css')}}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
   </head>
 
   <body class="nav-md">
@@ -62,6 +65,7 @@
         <!-- /footer content -->
       </div>
     </div>
+    <script src="{{asset('admin_theme/build/js/admin.js')}}"></script>
     <!-- jQuery -->
     <script src=" {{asset('admin_theme/vendors/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap -->
@@ -102,6 +106,7 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{asset('admin_theme/build/js/custom.min.js')}}"></script>
+    
 	
   </body>
 </html>

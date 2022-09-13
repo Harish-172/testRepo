@@ -76,9 +76,14 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Category $category, $id)
     {
-        //
+        $data = array(
+            'name'=>$request->category_name,
+            'category_id'=>$request->category_id
+        );
+        Category::where('id', $id)->update($data);
+        return redirect()->back();
     }
 
     /**
@@ -87,8 +92,11 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
-    {
-        //
+    public function destroy(Request $request, Category $category)
+    {  
+        Category::where('id', $request['categoryId'])->delete();
+
+        return response()->json(['sucess'=>'Category deleted successfully']);
+
     }
 }
