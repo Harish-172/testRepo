@@ -33,46 +33,45 @@
             <div class="x_content">
 
               <div class="table-responsive">
-                <table class="table table-striped jambo_table bulk_action">
+                <table class="table table-striped table-bordered">
                   <thead>
                     <tr class="headings">
-                      <th>
-                        <input type="checkbox" id="check-all" class="flat">
-                      </th>
+        
                       <th class="column-title">Sr.No </th>
+                      <th class="column-title">Product Name</th>
                       <th class="column-title">Category Name</th>
-                      <th class="column-title">Parent Category Name</th>
-                      <th class="column-title">Create Date</th>
+                      <th class="column-title">Product Price</th>
+                      <th class="column-title">Product Image</th>
+                      <th class="column-title">Extra Detail</th>
                       <th class="column-title no-link last"><span class="nobr">Action</span>
                       </th>
-                      <th class="bulk-actions" colspan="7">
-                        <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-                      </th>
+                     
                     </tr>
                   </thead>
-                  <tbody>                
-                        @forelse($categories as $category)
-                            <tr class="even pointer">
-                                <td class="a-center ">
-                                    <input type="checkbox" class="flat" name="table_records">
-                                </td>
+                  <tbody>           
+                        @forelse($products as $product)
+                            <tr class="even pointer">    
                                 <td>{{$loop->index + 1}}</td>
-                                <td>{{$category['name']}}</td>
+                                <td>{{$product['name']}}</td>
                                 <td>
-                                    @if($category['category_id'])
-                                        {{$categories[$loop->index]->parent->name}}
+                                    @if($product['category_id'])
+                                        {{$products[$loop->index]->category->name}}
                                     @else
-                                        No Parent Category
+                                        No Parent product
                                     @endif
                                 </td>
-                                <td>{{$category['created_at']}}</td>    
+                                <td>{{$product['price']}}</td>    
+                                <td><img src='{{asset("uploads/images/" .$product['image'])}}' width="80px" height="80px"/></td>    
                                 <td>
-                                    <a href="{{route('category.edit', $category['id'])}}"><i class="fa fa-edit"></i></a>    
-                                    <a href="javascript:void(0)" class="delete-category" data-id="{{$category['id']}}"><i class="fa fa-trash"></i></a>    
+                                  <a href="{{route('extra.detail', $product['id'])}}"><button>Add</button></a>
+                                </td>  
+                                <td>
+                                    <a href="{{route('product.edit', $product['id'])}}"><i class="fa fa-edit"></i></a> &nbsp;&nbsp;&nbsp;  
+                                    <a href="javascript:void(0)" class="delete-product" data-id="{{$product['id']}}"><i class="fa fa-trash"></i></a>    
                                 </td>    
                             </tr>   
                         @empty
-                            Please Add category
+                            Please Add product
                         @endforelse                        
                   </tbody>
                 </table>
@@ -83,27 +82,4 @@
       </div>
     </div>
   </div>
-
-{{-- <table class="table">
-    <thead>
-        <tr>
-            <th>Sr.No</th>
-            <th>Category Name</th>
-            <th>Parent Category Name</th>
-            <th>Create Date</th>    
-        </tr>    
-    </thead>   
-    <tbody>
-        @forelse($categories as $category)
-        <tr>
-            <td>{{$loop->index + 1}}</td>
-            <td>{{$category['name']}}</td>
-            <td>{{$category['category_id']}}</td>
-            <td>{{$category['created_at']}}</td>    
-        </tr>   
-        @empty
-            Please Add category
-        @endforelse
-    </tbody> 
-</table>  --}}
 @endsection        

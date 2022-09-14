@@ -65,7 +65,9 @@
         <!-- /footer content -->
       </div>
     </div>
-    <script src="{{asset('admin_theme/build/js/admin.js')}}"></script>
+
+     
+    
     <!-- jQuery -->
     <script src=" {{asset('admin_theme/vendors/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap -->
@@ -105,7 +107,11 @@
     <script src="{{asset('admin_theme/vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 
     <!-- Custom Theme Scripts -->
+   
+
     <script src="{{asset('admin_theme/build/js/custom.min.js')}}"></script>
+    <script src="{{asset('admin_theme/build/js/setHttpForAjax.js')}}"></script>
+    <script src="{{asset('admin_theme/build/js/admin.js')}}"></script>
     
 	
   </body>

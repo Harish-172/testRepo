@@ -34,11 +34,17 @@
             </li>
             <li><a><i class="fa fa-edit"></i>Category Manager<span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="{{route('show.categories')}}">List</a></li>
                 <li><a href="{{route('create.category')}}">Create</a></li>
+                <li><a href="{{route('show.categories')}}">List</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-edit"></i>Product Manager<span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu">
+                <li><a href="{{route('product.create')}}">Create</a></li>
+                <li><a href="{{route('product.show')}}">List</a></li>
+              </ul>
+            </li>
+            {{-- <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="general_elements.html">General Elements</a></li>
                 <li><a href="media_gallery.html">Media Gallery</a></li>
@@ -56,7 +62,7 @@
                 <li><a href="tables.html">Tables</a></li>
                 <li><a href="tables_dynamic.html">Table Dynamic</a></li>
               </ul>
-            </li>
+            </li> --}}
             <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="chartjs.html">Chart JS</a></li>

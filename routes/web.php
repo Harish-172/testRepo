@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,4 +49,16 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/edit/categories/{id}', [CategoryController::class, 'edit'])->name('category.edit');
     Route::post('/update/categories/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::post('/delete/category', [CategoryController::class, 'destroy'])->name('category.delete');
+
+    /*  Category routes */
+    Route::get('/product/create', [ProductController::class, 'productCreate'])->name('product.create');
+    Route::get('/product/show', [ProductController::class, 'productShow'])->name('product.show');
+    Route::post('/product/add', [ProductController::class, 'productAdd'])->name('product.add');
+    Route::get('/product/show', [ProductController::class, 'productShow'])->name('product.show');
+    Route::get('/product/edit/{id}', [ProductController::class, 'productEdit'])->name('product.edit');
+    Route::post('/product/edit/{id}', [ProductController::class, 'productUpdate'])->name('product.update');
+    Route::post('/product/delete/', [ProductController::class, 'productDelete'])->name('product.update');
+    Route::get('/extra/detail/{id}', [ProductController::class, 'productExtraDetail'])->name('extra.detail');
+    Route::post('/extra/detail/{id}', [ProductController::class, 'productExtraDetailStore'])->name('extra.detail.store');
+
 });
