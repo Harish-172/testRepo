@@ -8,7 +8,12 @@ use Illuminate\Http\Request;
 
 class adminController extends Controller
 {
+    public function __construct(Category $user){
+        $this->user = $user;
+        dd($this->user); 
+    }
     public function adminLogin(){
+        
         return view('admin.login');
     }
 
@@ -36,6 +41,12 @@ class adminController extends Controller
      */
 
     public function adminLogout(){
+        Auth::logout();
+        return redirect()->route('admin.login');
+    }
+
+
+    public function TestFunc(){
         Auth::logout();
         return redirect()->route('admin.login');
     }

@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/edit/categories/{id}', [CategoryController::class, 'edit'])->name('category.edit');
     Route::post('/update/categories/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::post('/delete/category', [CategoryController::class, 'destroy'])->name('category.delete');
+<<<<<<< HEAD
 
     /*  Category routes */
     Route::get('/product/create', [ProductController::class, 'productCreate'])->name('product.create');
@@ -61,4 +62,6 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/extra/detail/{id}', [ProductController::class, 'productExtraDetail'])->name('extra.detail');
     Route::post('/extra/detail/{id}', [ProductController::class, 'productExtraDetailStore'])->name('extra.detail.store');
 
+=======
+>>>>>>> 909ea79... move data with standard using promise in js
 });

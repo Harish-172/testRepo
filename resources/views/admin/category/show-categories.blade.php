@@ -60,7 +60,7 @@
                                 <td>{{$category['name']}}</td>
                                 <td>
                                     @if($category['category_id'])
-                                        {{$categories[$loop->index]->parent->name}}
+                                        {{-- {{$categories[$loop->index]->parent->name}} --}}
                                     @else
                                         No Parent Category
                                     @endif

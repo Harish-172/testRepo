@@ -65,9 +65,13 @@
         <!-- /footer content -->
       </div>
     </div>
+<<<<<<< HEAD
 
      
     
+=======
+    <script src="{{asset('admin_theme/build/js/admin.js')}}"></script>
+>>>>>>> 909ea79... move data with standard using promise in js
     <!-- jQuery -->
     <script src=" {{asset('admin_theme/vendors/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap -->
@@ -110,8 +114,11 @@
    
 
     <script src="{{asset('admin_theme/build/js/custom.min.js')}}"></script>
+<<<<<<< HEAD
     <script src="{{asset('admin_theme/build/js/setHttpForAjax.js')}}"></script>
     <script src="{{asset('admin_theme/build/js/admin.js')}}"></script>
+=======
+>>>>>>> 909ea79... move data with standard using promise in js
     
 	
   </body>
